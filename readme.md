@@ -1,7 +1,4 @@
-## Machine Learning Crash Course with Tensorflow
-
-https://developers.google.com/machine-learning/crash-course/
-
+## Machine Learning with Tensorflow
 
 ### Step by Step setup environment with Cloud9
 
