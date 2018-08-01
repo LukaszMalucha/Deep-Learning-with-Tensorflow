@@ -50,6 +50,7 @@ X_test = sc.transform(X_test)
 import keras
 from keras.models import Sequential          ## to initialise neuro-network
 from keras.layers import Dense               ## to create layers
+from keras.models import load_model          ## saving ann
 
 ## Initialise the Artificial Neural Network
 classifier = Sequential()
@@ -87,6 +88,13 @@ cm = confusion_matrix(y_test, y_pred)
 
 ## Accuracy of 86% confirmed
 
+
+#### SAVING/LOADING MODEL:
+        
+classifier.save('my_classifier.h5')        
+
+
+classifier = load_model('my_classifier.h5')
 
 
 ### SINGLE PREDICTION
