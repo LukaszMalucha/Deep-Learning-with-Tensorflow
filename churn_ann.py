@@ -89,6 +89,18 @@ cm = confusion_matrix(y_test, y_pred)
 
 
 
+### SINGLE PREDICTION
+
+# two pairs of square brackets + feature scaling(NO FIT! - just transform)
+# To remove warning transform one element into float
+
+john = np.array([[0.0,1,555,1, 51,5, 1550000, 5, 1, 1, 120000]])
+john_transform = sc.transform(john)
+
+
+john_pred = classifier.predict(john_transform)
+john_pred = (john_pred > 0.5)
+
 
 
 
