@@ -37,3 +37,7 @@ https://developer.nvidia.com/
 
 https://developer.nvidia.com/cudnn
 https://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html
+
+
+
+### Saving ANN progress
