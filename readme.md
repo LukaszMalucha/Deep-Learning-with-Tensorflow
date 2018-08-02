@@ -46,4 +46,10 @@ Done
 ### Improving ANN performance
 Done
 
+
+### Debugging tensorflow
+
+https://github.com/GoogleCloudPlatform/training-data-analyst/blob/master/courses/machine_learning/deepdive/03_tensorflow/debug_demo.ipynb
+
 ### Training ANN in Cloud
+

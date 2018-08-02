@@ -22,7 +22,7 @@ with tf.Session() as sess:
 
 ## BUILIDNG THE GRAPH
 a = tf.placeholder(dtype=tf.int32, shape=(None,))  # batchsize x scalar
-b = tf.placeholder(dtype=tf.int32, shape=(None,))
+b = tf.placeholder(dtype=tf.int32, shape=(None,)) # None for placeholder X to avoid insufficient rows bug
 c = tf.add(a, b)
 
 ## RUNNING THE GRAPH
@@ -60,7 +60,7 @@ with tf.Session() as sess:
 ### HERON FORMULA, BUT SIDES ARE FEED INTO THE GRAPH:
 
 with tf.Session() as sess:
-  sides = tf.placeholder(tf.float32, shape=(None, 3))  # batchsize number of triangles, 3 sides
+  sides = tf.placeholder(tf.float32, shape=(None, 3))  # batchsize number of triangles, 3 side. 
   area = compute_area(sides)
   result = sess.run(area, feed_dict = {
       sides: [
