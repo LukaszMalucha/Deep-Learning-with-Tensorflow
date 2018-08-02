@@ -41,6 +41,9 @@ https://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html
 
 
 ### Saving ANN progress
-
+Done
 
 ### Improving ANN performance
+Done
+
+### Training ANN in Cloud
