@@ -110,7 +110,7 @@ john_pred = classifier.predict(john_transform)
 john_pred = (john_pred > 0.5)
 
 
-
+## Shuffling?
 
 
 
