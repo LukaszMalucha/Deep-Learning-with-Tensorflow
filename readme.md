@@ -53,3 +53,5 @@ https://github.com/GoogleCloudPlatform/training-data-analyst/blob/master/courses
 
 ### Training ANN in Cloud
 
+##### Estimator API
+
