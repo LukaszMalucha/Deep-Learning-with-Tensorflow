@@ -55,3 +55,5 @@ https://github.com/GoogleCloudPlatform/training-data-analyst/blob/master/courses
 
 ##### Estimator API
 
+### Setting up Google Cloud
+

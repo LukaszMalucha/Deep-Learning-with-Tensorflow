@@ -11,11 +11,14 @@ os.environ['BUCKET'] = BUCKET
 os.environ['REGION'] = REGION
 os.environ['TFVERSION'] = '1.8'  # Tensorflow version
 
-
+# setup project
 %bash
 gcloud config set project $PROJECT
 gcloud config set compute/region $REGION
 
+
+
+# give MLCE access to our files
 %bash
 PROJECT_ID=$PROJECT
 AUTH_TOKEN=$(gcloud auth print-access-token)
