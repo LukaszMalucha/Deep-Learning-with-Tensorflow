@@ -2,17 +2,6 @@ import argparse
 
 from keras.callbacks import LambdaCallback
 
-import trainer.board as board
-import trainer.loader as loader
-import trainer.modeller as modeller
-import trainer.saver as saver
-
-from trainer.constants import BATCH_SIZE, CHECKPOINT_PERIOD
-from trainer.constants import EPOCHS
-from trainer.constants import PREDICTION_LENGTH
-from trainer.constants import WINDOW_LENGTH
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd

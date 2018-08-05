@@ -13,9 +13,5 @@ setup(name='churn-modelling',
       install_requires=[
                       'keras',
                       'h5py',
-                      'tensorflow',
-                      'pandas',
-                      'numpy',
-                      'sklearn',
                       ],
                       zip_safe=False) 
