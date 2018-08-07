@@ -57,3 +57,5 @@ https://github.com/GoogleCloudPlatform/training-data-analyst/blob/master/courses
 
 ### Setting up Google Cloud
 
+### Preparing CNN for GCMLE
+

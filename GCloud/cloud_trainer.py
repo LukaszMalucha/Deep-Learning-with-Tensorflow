@@ -51,30 +51,12 @@ if __name__ == '__main__':
        
         ## MODEL
 
-        # Importing the dataset
-        dataset = pd.read_csv('Churn_Modelling.csv')
-        X = dataset.iloc[:, 3:13].values   ## Everything except row number, Name and CustomerId
-        y = dataset.iloc[:, 13].values     ## Customer Exited 0-1
-        
-        # Encoding categorical data into 0-1 values (text to numbers)
-        
-        labelencoder_X_1 = LabelEncoder()
-        X[:, 1] = labelencoder_X_1.fit_transform(X[:, 1])    ## transform country variable
-        labelencoder_X_2 = LabelEncoder()
-        X[:, 2] = labelencoder_X_2.fit_transform(X[:, 2])    ## transform gender variable
-        onehotencoder = OneHotEncoder(categorical_features = [1])
-        X = onehotencoder.fit_transform(X).toarray()
-        X = X[:, 1:]                         ## remove first column to avoid dummy variable trap !!!!!!!!!!!!!!!!
-        
-        # Splitting the dataset into the Training set and Test set
-        
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
-        
-        # Feature Scaling
-        
-        sc = StandardScaler()
-        X_train = sc.fit_transform(X_train)
-        X_test = sc.transform(X_test)
+
+        X_train = 
+        X_test =
+        y_train =
+        y_test = 
+
         
         ## Initialise the Artificial Neural Network
         classifier = Sequential()
