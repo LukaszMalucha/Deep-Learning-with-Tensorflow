@@ -15,11 +15,21 @@
 
 # Importing the libraries
 import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
+import os
+
+from tensorflow.python.lib.io import file_io
+from pandas.compat import StringIO
+
+def read_data(gcs_path):
+   print('downloading csv file from', gcs_path)     
+   file_stream = file_io.FileIO(gcs_path, mode='r')
+   data = pd.read_csv(StringIO(file_stream.read()))
+   print(data.head())
+   return data
 
 # Importing the dataset
-dataset = pd.read_csv('Churn_Modelling.csv')
+dataset = read_data('gs://churn-modelling-mlengine/data/Churn_Modelling.csv')
 X = dataset.iloc[:, 3:13].values   ## Everything except row number, Name and CustomerId
 y = dataset.iloc[:, 13].values     ## Customer Exited 0-1
 
@@ -71,70 +81,10 @@ classifier.add(Dense(output_dim = 1, init = 'uniform', activation = 'sigmoid')) 
 classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'] )    ## logarithmic loss
 
 ## Fitting the ANN to the Training set. Two additional arguments - batch size & number of epochs
-classifier.fit(X_train, y_train, batch_size=10, nb_epoch=100)
+classifier.fit(X_train, y_train, batch_size=10, nb_epoch=1)
 
-### Accuracy of 86% ###
+classifier.save('classifier.h5') 
 
-
-################################### MAKING THE PREDICTION AND EVALUATING MODEL ######################################################
-
-y_pred = classifier.predict(X_test)
-y_pred = (y_pred > 0.5)
-
-# Making the Confusion Matrix
-from sklearn.metrics import confusion_matrix
-cm = confusion_matrix(y_test, y_pred)
-
-## CM 1550 45
-##    230  175
-
-## Accuracy of 86% confirmed
-
-#### SAVING/LOADING MODEL:
-        
-classifier.save('my_classifier.h5')        
-
-
-#classifier = load_model('my_classifier.h5')
-
-
-
-### SINGLE PREDICTION
-
-# two pairs of square brackets + feature scaling(NO FIT! - just transform)
-# To remove warning transform one element into float
-
-#john = np.array([[0.0,1,555,1, 51,5, 1550000, 5, 1, 1, 120000]])
-#john_transform = sc.transform(john)
-#
-#
-#john_pred = classifier.predict(john_transform)
-#john_pred = (john_pred > 0.5)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+with file_io.FileIO('classifier.h5', mode='rb') as input_f:
+    with file_io.FileIO('gs://churn-modelling-mlengine/data/classifier.h5', mode='wb+') as output_f:
+        output_f.write(input_f.read())

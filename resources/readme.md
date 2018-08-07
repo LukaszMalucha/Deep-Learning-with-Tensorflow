@@ -44,7 +44,7 @@ https://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html
 Done
 
 ### Improving ANN performance
-Done
+Hyperparameter Tuning
 
 
 ### Debugging tensorflow
