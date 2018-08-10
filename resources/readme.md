@@ -59,3 +59,5 @@ https://github.com/GoogleCloudPlatform/training-data-analyst/blob/master/courses
 
 ### Preparing CNN for GCMLE
 
+### Builidng SOM
+
