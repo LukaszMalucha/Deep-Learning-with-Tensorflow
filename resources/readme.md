@@ -40,24 +40,26 @@ https://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html
 
 
 
-### Saving ANN progress
+#### Saving ANN progress
 Done
 
-### Improving ANN performance
+#### Improving ANN performance
 Hyperparameter Tuning
 
 
-### Debugging tensorflow
+#### Debugging tensorflow
 
 https://github.com/GoogleCloudPlatform/training-data-analyst/blob/master/courses/machine_learning/deepdive/03_tensorflow/debug_demo.ipynb
 
-### Training ANN in Cloud
+#### Training ANN in Cloud
 
 ##### Estimator API
 
-### Setting up Google Cloud
+#### Setting up Google Cloud
 
-### Preparing CNN for GCMLE
+#### Preparing CNN for GCMLE
 
-### Builidng SOM
+#### Builidng SOM
+
+#### Fraud detector (SOM + ANN)
 
